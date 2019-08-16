@@ -1,0 +1,22 @@
+vector<ll> ad[L];
+bool vis[L];
+void bfs(ll ind)
+{
+	deque<ll> q;
+	visited[ind] = true;
+	q.push_front(ind);
+	while(!q.empty())
+	{
+		ll p = q.front();
+		q.pop_front();
+		ll i;
+		for(i = 0; i < ad[p].size(); i++)
+		{
+			if(!visited[ad[p][i]])
+			{
+				visited[ad[p][i]] = true;
+				q.push_back(ad[p][i]);
+			}
+		}
+	}
+}
